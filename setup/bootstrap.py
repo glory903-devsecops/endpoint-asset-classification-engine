@@ -27,9 +27,9 @@ def setup():
     else:
         print("Virtual environment already exists.")
 
-    # 2. Upgrade pip
-    print("Upgrading pip...")
-    run_command([python_exe, "-m", "pip", "install", "--upgrade", "pip"])
+    # 2. Upgrade pip (네트워크 오류 방지를 위해 --trusted-host 추가)
+    print("Checking/Upgrading pip...")
+    run_command([python_exe, "-m", "pip", "install", "--upgrade", "pip", "--trusted-host", "pypi.org", "--trusted-host", "pypi.python.org", "--trusted-host", "files.pythonhosted.org"])
 
     # 3. Install requirements
     req_file = root_dir / "requirements.txt"
