@@ -12,22 +12,19 @@ v2.5 리팩토링을 통해 **지능형 스코어링 분류**와 **Tailwind CSS 
 
 ## 🚀 빠른 시작 (Quick Start)
 
-1.  **백엔드 환경 구성 (가상환경 및 설치)**:
+터미널에서 아래 명령어를 입력하여 **환경 구성, 자산 스캔, 대시보드 실행**을 한 번에 완료할 수 있습니다.
+
+1.  **프로젝트 폴더로 이동**:
     ```bash
-    python setup/bootstrap.py
+    cd endpoint-asset-classification-engine
     ```
-2.  **자산 분류 엔진 실행**:
+2.  **통합 시작 도구 실행**:
     ```bash
-    python main.py --dry-run  # 시뮬레이션 모드
-    python main.py            # 실제 분류 실행
+    python dev.py all
     ```
-3.  **프리미엄 웹 대시보드 (React + Vite)**:
-    ```bash
-    cd dashboard
-    npm install
-    npm run dev
-    # 접속: http://localhost:5173
-    ```
+
+> [!TIP]
+> `dev.py all` 명령어를 실행하면 약 1~2분 내에 모든 설정이 완료되고, **내장 웹 대시보드 서버가 가동되며 브라우저 창이 자동으로 열립니다.**
 
 ## 디렉토리 구조
 
@@ -36,7 +33,7 @@ v2.5 리팩토링을 통해 **지능형 스코어링 분류**와 **Tailwind CSS 
 -   `adapters/`: 인프라 세부 구현 (원격 시그니처, 파일 시스템, 암호화)
 -   `dashboard/`: **Tailwind CSS v4** 기반 프리미엄 대시보드 (React)
 -   `docs/`: 제품 요구사항 정의서(PRD) 및 QA 결과 보고서
--   `.github/workflows/`: CI (GitHub Actions) 워크플로우
+-   `dev.py`: 프로젝트 통합 관리 및 자동 시작 도구
 
 ## 라이선스
 
