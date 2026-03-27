@@ -14,6 +14,11 @@ class IFileOperation(ABC):
         pass
 
     @abstractmethod
+    def get_safe_path(self, target_path: Path) -> Path:
+        """동일한 이름의 파일이 있을 경우, 새로운 경로를 반환하여 덮어쓰기를 방지합니다."""
+        pass
+
+    @abstractmethod
     def ensure_directory(self, path: Path) -> None:
         """디렉토리가 존재하는지 확인하고 없으면 생성합니다."""
         pass
@@ -44,4 +49,11 @@ class IEncryptionStrategy(ABC):
     @abstractmethod
     def generate_key(self) -> bytes:
         """암호화 키를 생성합니다."""
+        pass
+
+
+class ISignatureProvider(ABC):
+    @abstractmethod
+    def get_signatures(self) -> dict:
+        """분류를 위한 최신 시그니처 세트를 가져옵니다."""
         pass

@@ -1,0 +1,17 @@
+{
+  "enterprise": {
+    "keywords": ["우드메탈", "프로젝트", "인증", "공정", "관리"],
+    "signatures": [".git", "node_modules", "venv", ".vscode", "package.json", "requirements.txt", "pom.xml"]
+  },
+  "paths": {
+    "inbox": "test_data/inbox",
+    "work_assets": "Work_Assets",
+    "personal_assets": "Personal_Assets",
+    "security_alerts": "Security_Alert_Samples",
+    "audit_log": "governance_audit.log"
+  },
+  "security": {
+    "encryption_key": "p_W8vB8X8X8X8X8X8X8X8X8X8X8X8X8X8X8X8X8X8X8=",
+    "isolate_keywords": ["malware", "threat", "virus"]
+  }
+}

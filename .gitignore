@@ -1,0 +1,30 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+venv/
+.env
+
+# User Data (CRITICAL: Do not upload to GitHub)
+test_data/
+Work_Assets/
+Personal_Assets/
+Security_Alert_Samples/
+governance_audit.log
+
+# Dashboard
+dashboard/node_modules/
+dashboard/dist/
+dashboard/.env
+
+# TestSprite
+testsprite_tests/
+.testsprite/
+
+# Bytecode
+**/__pycache__/
+
+# IDEs
+.vscode/
+.idea/
+.DS_Store
