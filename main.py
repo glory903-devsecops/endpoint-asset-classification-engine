@@ -21,9 +21,8 @@ def main():
     file_op = FileSystemAdapter()
     hasher = SHA256HashingAdapter()
     
-    # 보안 권고에 따른 고정 키 (실제 운영환경에서는 환경변수나 KMS 연동 필요)
-    # 여기서는 고정된 bytes를 사용하거나 새로 생성합니다.
-    enc_key = b'v-p6v_Z-v9_v_v-v_v_v_v-v_v_v_v-v_v_v_v_v=' # 임시 키 (Fernet 형식)
+    # Fernet key must be 32 url-safe base64-encoded bytes
+    enc_key = b'p_W8vB8X8X8X8X8X8X8X8X8X8X8X8X8X8X8X8X8X8X8=' 
     encryption = FernetEncryptionAdapter(enc_key)
     logger = MCPLoggerAdapter("governance_audit.log")
 
@@ -32,7 +31,7 @@ def main():
     isolation_service = ThreatIsolationUseCase(file_op, encryption, logger)
 
     # 2. 경로 설정 (샘플 테스트용)
-    base_dir = Path("g:/내 드라이브/99.Develop/Endpoint_Asset_Classification_Engine/test_data")
+    base_dir = Path("g:/내 드라이브/99.Develop/endpoint-asset-classification-engine/test_data")
     source_dir = base_dir / "inbox"
     work_dir = base_dir / "Work_Assets"
     personal_dir = base_dir / "Personal_Assets"
