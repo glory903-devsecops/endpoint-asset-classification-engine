@@ -27,15 +27,15 @@ def setup():
     else:
         print("Virtual environment already exists.")
 
-    # 2. Upgrade pip (네트워크 오류 방지를 위해 --trusted-host 추가)
-    print("Checking/Upgrading pip...")
-    run_command([python_exe, "-m", "pip", "install", "--upgrade", "pip", "--trusted-host", "pypi.org", "--trusted-host", "pypi.python.org", "--trusted-host", "files.pythonhosted.org"])
+    # 2. Upgrade pip (네트워크 환경에 따라 지연이 발생할 수 있으므로 선택사항으로 변경)
+    # print("Checking/Upgrading pip...")
+    # run_command([python_exe, "-m", "pip", "install", "--upgrade", "pip", "--trusted-host", "pypi.org", "--trusted-host", "pypi.python.org", "--trusted-host", "files.pythonhosted.org"])
 
-    # 3. Install requirements
+    # 3. Install requirements (네트워크 오류 방지를 위해 --trusted-host 추가)
     req_file = root_dir / "requirements.txt"
     if req_file.exists():
         print("Installing dependencies from requirements.txt...")
-        run_command([pip_exe, "install", "-r", str(req_file)])
+        run_command([pip_exe, "install", "-r", str(req_file), "--trusted-host", "pypi.org", "--trusted-host", "pypi.python.org", "--trusted-host", "files.pythonhosted.org"])
     else:
         print("requirements.txt not found.")
 
